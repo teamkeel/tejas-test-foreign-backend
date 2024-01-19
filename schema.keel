@@ -56,11 +56,11 @@ model VoucherCodeProducts {
         get getVoucherCodeProduct(id)
         create createVoucherCodeProduct() with (
             voucherCode.id,
-            foreignProductId.foreignId,
+            foreignProductId.id,
         )
         update updateVoucherCodeProduct(id) with (
             voucherCode.id,
-            foreignProductId.foreignId,
+            foreignProductId.id,
         )
         delete deleteVoucherCodeProduct(id)
     }
