@@ -31,7 +31,7 @@ model Product {
         name Text
         description Text
         price Text
-        foreignCreatedAt Timestamp
+        foreignCreatedAt Text
     }
 
     actions {

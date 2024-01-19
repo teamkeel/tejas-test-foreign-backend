@@ -17,7 +17,7 @@ const hooks: GetProductHooks = {
       price: product.price,
       createdAt: product.createdAt,
       foreignCreatedAt: product.createdAt,
-      updatedAt: null,
+      updatedAt: product.createdAt,
     };
   },
 };

@@ -338,7 +338,7 @@ export interface ProductTable {
     name: string
     description: string
     price: string
-    foreignCreatedAt: Date
+    foreignCreatedAt: string
     id: Generated<string>
     createdAt: Generated<Date>
     updatedAt: Generated<Date>
@@ -348,7 +348,7 @@ export interface Product {
     name: string
     description: string
     price: string
-    foreignCreatedAt: Date
+    foreignCreatedAt: string
     id: string
     createdAt: Date
     updatedAt: Date
@@ -358,7 +358,7 @@ export type ProductCreateValues = {
     name: string
     description: string
     price: string
-    foreignCreatedAt: Date
+    foreignCreatedAt: string
     id?: string
     createdAt?: Date
     updatedAt?: Date
@@ -369,7 +369,7 @@ export interface ProductWhereConditions {
     name?: string | runtime.StringWhereCondition;
     description?: string | runtime.StringWhereCondition;
     price?: string | runtime.StringWhereCondition;
-    foreignCreatedAt?: Date | runtime.DateWhereCondition;
+    foreignCreatedAt?: string | runtime.StringWhereCondition;
     id?: string | runtime.IDWhereCondition;
     createdAt?: Date | runtime.DateWhereCondition;
     updatedAt?: Date | runtime.DateWhereCondition;
@@ -404,7 +404,7 @@ export type ProductAPI = {
         name: '',
         description: '',
         price: '',
-        foreignCreatedAt: new Date()
+        foreignCreatedAt: ''
     });
     ```
     */
