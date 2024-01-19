@@ -1,0 +1,73 @@
+model VoucherCode {
+    fields {
+        code Text @unique
+        validFrom Date
+        validUntil Date?
+        discountPercent Number
+    }
+
+    actions {
+        list listVoucherCodes()
+        get getVoucherCode(code) @function
+        create createVoucherCode() with (code, validFrom, discountPercent)
+        update updateVoucherCode(id) with (
+            code,
+            validFrom,
+            validUntil,
+            discountPercent,
+        )
+        delete deleteVoucherCode(id)
+    }
+
+    @permission(
+        actions: [list, get, create, update, delete],
+        expression: true
+    )
+}
+
+model Product {
+    fields {
+        foreignId Number @unique
+        name Text
+        description Text
+        price Number
+        foreignCreatedAt Timestamp
+        foreignUpdatedAt Timestamp
+    }
+
+    actions {
+        list listProducts() @function
+        get getProduct(id?) @function
+    }
+
+    @permission(
+        actions: [list, get],
+        expression: true
+    )
+}
+
+model VoucherCodeProducts {
+    fields {
+        voucherCode VoucherCode
+        foreignProductId Product?
+    }
+
+    actions {
+        list listVoucherCodeProducts()
+        get getVoucherCodeProduct(id)
+        create createVoucherCodeProduct() with (
+            voucherCode.id,
+            foreignProductId.foreignId,
+        )
+        update updateVoucherCodeProduct(id) with (
+            voucherCode.id,
+            foreignProductId.foreignId,
+        )
+        delete deleteVoucherCodeProduct(id)
+    }
+
+    @permission(
+        actions: [list, get, create, update, delete],
+        expression: true
+    )
+}
