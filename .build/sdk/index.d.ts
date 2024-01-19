@@ -46,7 +46,7 @@ export interface ListProductsInput {
     before?: string;
 }
 export interface GetProductInput {
-    id?: string;
+    id: string;
 }
 export interface ListVoucherCodeProductsWhere {
 }
@@ -337,9 +337,8 @@ export interface ProductTable {
     foreignId: number
     name: string
     description: string
-    price: number
+    price: string
     foreignCreatedAt: Date
-    foreignUpdatedAt: Date
     id: Generated<string>
     createdAt: Generated<Date>
     updatedAt: Generated<Date>
@@ -348,9 +347,8 @@ export interface Product {
     foreignId: number
     name: string
     description: string
-    price: number
+    price: string
     foreignCreatedAt: Date
-    foreignUpdatedAt: Date
     id: string
     createdAt: Date
     updatedAt: Date
@@ -359,9 +357,8 @@ export type ProductCreateValues = {
     foreignId: number
     name: string
     description: string
-    price: number
+    price: string
     foreignCreatedAt: Date
-    foreignUpdatedAt: Date
     id?: string
     createdAt?: Date
     updatedAt?: Date
@@ -371,9 +368,8 @@ export interface ProductWhereConditions {
     foreignId?: number | runtime.NumberWhereCondition;
     name?: string | runtime.StringWhereCondition;
     description?: string | runtime.StringWhereCondition;
-    price?: number | runtime.NumberWhereCondition;
+    price?: string | runtime.StringWhereCondition;
     foreignCreatedAt?: Date | runtime.DateWhereCondition;
-    foreignUpdatedAt?: Date | runtime.DateWhereCondition;
     id?: string | runtime.IDWhereCondition;
     createdAt?: Date | runtime.DateWhereCondition;
     updatedAt?: Date | runtime.DateWhereCondition;
@@ -384,7 +380,6 @@ export type ProductOrderBy = {
     description?: SortDirection,
     price?: SortDirection,
     foreignCreatedAt?: SortDirection,
-    foreignUpdatedAt?: SortDirection,
     id?: SortDirection,
     createdAt?: SortDirection,
     updatedAt?: SortDirection
@@ -408,9 +403,8 @@ export type ProductAPI = {
         foreignId: 0,
         name: '',
         description: '',
-        price: 0,
-        foreignCreatedAt: new Date(),
-        foreignUpdatedAt: new Date()
+        price: '',
+        foreignCreatedAt: new Date()
     });
     ```
     */

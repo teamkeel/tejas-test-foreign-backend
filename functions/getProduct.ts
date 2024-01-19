@@ -16,9 +16,8 @@ const hooks: GetProductHooks = {
       description: product.description,
       price: product.price,
       createdAt: product.createdAt,
-      updatedAt: product.updatedAt,
       foreignCreatedAt: product.createdAt,
-      foreignUpdatedAt: product.updatedAt,
+      updatedAt: null,
     };
   },
 };

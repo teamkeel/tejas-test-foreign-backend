@@ -46,7 +46,7 @@ export interface ListProductsInput {
     before?: string;
 }
 export interface GetProductInput {
-    id?: string;
+    id: string;
 }
 export interface ListVoucherCodeProductsWhere {
 }
@@ -123,7 +123,7 @@ declare class ActionExecutor {
     updateVoucherCode(i: UpdateVoucherCodeInput): Promise<sdk.VoucherCode>;
     deleteVoucherCode(i: DeleteVoucherCodeInput): Promise<string>;
     listProducts(i?: ListProductsInput): Promise<{results: sdk.Product[], pageInfo: runtime.PageInfo}>;
-    getProduct(i?: GetProductInput): Promise<sdk.Product | null>;
+    getProduct(i: GetProductInput): Promise<sdk.Product | null>;
     listVoucherCodeProducts(i?: ListVoucherCodeProductsInput): Promise<{results: sdk.VoucherCodeProducts[], pageInfo: runtime.PageInfo}>;
     getVoucherCodeProduct(i: GetVoucherCodeProductInput): Promise<sdk.VoucherCodeProducts | null>;
     createVoucherCodeProduct(i: CreateVoucherCodeProductInput): Promise<sdk.VoucherCodeProducts>;
