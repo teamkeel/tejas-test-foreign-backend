@@ -9,6 +9,8 @@ const hooks: GetProductHooks = {
     ).then((r) => r.json());
     console.log("hi 2", { product });
 
+    throw new Error("LOL");
+
     return {
       id: String(product.id),
       foreignId: product.id,
